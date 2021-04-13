@@ -1,14 +1,20 @@
 {
-  "name": "blogs3",
+  "name": "my_blog",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "author": "reco_luan",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "deploy-gh": "GH=1 yarn docs:build && bash scripts/deploy-gh.sh"
+    "dev": "vuepress dev . --host \"localhost\"",
+    "build": "vuepress build .",
+    "deploy": "bash deploy.sh"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "vuepress": "1.5.4",
+    "vuepress-plugin-meting": "^0.1.1",
+    "vuepress-theme-reco": "1.5.7"
+  },
+  "dependencies": {
+    "@vuepress-reco/vuepress-plugin-comments": "^1.5.7",
+    "vue-class-component": "^7.2.3"
+  },
+  "description": ""
 }
