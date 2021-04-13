@@ -1,23 +1,27 @@
+# 请自行判断去掉高亮行的注释
+
 #!/usr/bin/env sh
 
 # 确保脚本抛出遇到的错误
 set -e
 
 # 生成静态文件
-npm run build
+npm run docs:build
 
 # 进入生成的文件夹
-# cd public
+cd docs/.vuepress/dist
 
-# git init
-git add .
+# 如果是发布到自定义域名
+# echo 'www.example.com' > CNAME
+
+git init
+git add -A
 git commit -m 'deploy'
 
-# 如果发布到 https://<USERNAME>.github.io  填写你刚刚创建的仓库地址
-# git remote add origin https://github.com/Hz-Cool/testNotes.git
+# 如果发布到 https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
-git push -f origin  master:master
+# 如果发布到 https://<USERNAME>.github.io/<REPO>
+git push -f git@github.com:Hz-Cool/testNotes.git master:gh-pages
 
-cd ..
-
-tcb hosting:deploy public -e blog-9g8lgnuke4603ff9
+cd -
