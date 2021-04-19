@@ -1,5 +1,5 @@
 module.exports = {
-    theme: 'reco',
+    // theme: 'reco',
     title: 'Hello VuePress',
     description: 'Just playing around',
     base: '/testNotes',
